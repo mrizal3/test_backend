@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Api\KomisiController;
+use App\Http\Controllers\Api\PembayaranController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\KomisiController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,5 @@ use App\Http\Controllers\Api\KomisiController;
 // });
 
 Route::get('komisi', [KomisiController::class, 'getKomisi']);
+Route::post('pembayaran', [PembayaranController::class, 'store']);
+
