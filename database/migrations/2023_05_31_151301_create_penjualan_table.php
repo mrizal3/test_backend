@@ -15,13 +15,12 @@ class CreatePenjualanTable extends Migration
     {
         Schema::create('penjualan', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->integer('transaction_number')->unique();
-            table->foreign('marketing_id')->references('id')->on('marketing')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('transaction_number')->unique();
+            $table->foreignId('marketting_id')->constrained('marketting')->onDelete('cascade')->onUpdate('cascade');
             $table->date('date');
             $table->integer('cargo_fee')->unsigned();
             $table->integer('total_balance')->unsigned();
             $table->integer('grand_total')->unsigned();
-            $table->timestamps();
         });
     }
 
